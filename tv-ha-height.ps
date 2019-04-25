@@ -1,0 +1,14 @@
+//@version=3
+// HA_Height v.2, features: 
+//   1) shows body height
+//   2) shows wick height in opposite direction of candle direction
+study("HA Height")
+t = tickerid(syminfo.prefix, ticker, session.regular)
+ha_t = heikinashi(t)
+ha_low = security(ha_t, period, low, true) / atr(50)
+ha_high = security(ha_t, period, high, true) / atr(50)
+ha_open = security(ha_t, period, open, true) / atr(50)
+ha_close = security(ha_t, period, close, true) / atr(50)
+plot(ha_close-ha_open, color=black)
+up_down = (ha_open < ha_close) ? (ha_open - ha_low) : (ha_high - ha_open)
+plot(up_down, color=orange, transp=75)
