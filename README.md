@@ -9,3 +9,6 @@ This is a simple indicator based on Heikin Ashi charting.  It measures the heigh
 
 ## Comp Vol
 This is an indicator which ranks various volatility measures on a 1-100 scale for the past year.  It includes historical volatility, average true range, bollinger band width, and the width of a moving average ribbon.  It can be used to judge the volatility of an instrument and, if combined with implied volatility, it could be used to determine when options are over or under priced.
+
+## Heikin Ashi Strategy
+This is a port of the Heikin Ashi Strategy v2 by breizh29 (https://www.tradingview.com/script/CfMjJmRT-Heikin-Ashi-Strategy-V2/) to Thinkscript. 
