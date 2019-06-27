@@ -6,3 +6,6 @@ This is simply the MACD indicator normalized by ATR.  The values of MACD provide
 
 ## Heikin Ashi Height
 This is a simple indicator based on Heikin Ashi charting.  It measures the height of the bar and the wick in the "opposite" direction of price movement.  The theory behind it is when there is a heikin ashi trend, there will be no wicks, and when there is a wick there is no trend.  I created this so that I could plot this on a regular chart rather than a Heikin Ashi chart since HA charts don't reflect real price movement.  I normalized the values by ATR to be able to compare different securities that have different prices and volatilities.
+
+## Comp Vol
+This is an indicator which ranks various volatility measures on a 1-100 scale for the past year.  It includes historical volatility, average true range, bollinger band width, and the width of a moving average ribbon.  It can be used to judge the volatility of an instrument and, if combined with implied volatility, it could be used to determine when options are over or under priced.
