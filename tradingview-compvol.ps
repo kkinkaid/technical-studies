@@ -1,0 +1,45 @@
+//@version=3
+study(title="Combined Volatility Measures", shorttitle="Vols", overlay=false)
+hvlength = input(20, minval=1)
+atrlength = input(20, minval=1)
+bbwlength = input(20, minval=1)
+emalength = input(5, minval=3, title="EMA Length")
+emastep = input(5, minval=2, title="Step Between EMAs")
+lookback = input(255, minval=10)
+
+// HV Calculation 
+annual = 365
+per = isintraday or isdaily and interval == 1 ? 1 : 7
+hv = 100 * stdev(log(close / close[1]), hvlength) * sqrt(annual / per)
+
+// EMA Ribbon Width Calculation
+ema1 = ema(close, (0*emastep)+emalength)
+ema2 = ema(close, (1*emastep)+emalength)
+ema3 = ema(close, (2*emastep)+emalength)
+ema4 = ema(close, (3*emastep)+emalength)
+ema5 = ema(close, (4*emastep)+emalength)
+ema6 = ema(close, (5*emastep)+emalength)
+ema7 = ema(close, (6*emastep)+emalength)
+ema8 = ema(close, (7*emastep)+emalength)
+ema9 = ema(close, (8*emastep)+emalength)
+emaheight = abs((ema1-ema2)+(ema2-ema3)+(ema3-ema4)+(ema4-ema5)+(ema5-ema6)+(ema6-ema7)+(ema7-ema8)+(ema8-ema9))
+
+hvlowest = lowest(hv,lookback)
+hvhighest = highest(hv,lookback)
+atrlowest = lowest(atr(atrlength),lookback)
+atrhighest = highest(atr(atrlength),lookback)
+bbwlowest = lowest(stdev(close,bbwlength),lookback)
+bbwhighest = highest(stdev(close,bbwlength),lookback)
+marlowest = lowest(emaheight,lookback)
+marhighest = highest(emaheight,lookback)
+
+hvrank = (hv-hvlowest)/(hvhighest-hvlowest)
+atrrank = (atr(atrlength)-atrlowest)/(atrhighest-atrlowest)
+bbrank = (stdev(close,bbwlength)-bbwlowest)/(bbwhighest-bbwlowest)
+marrank = (emaheight-marlowest)/(marhighest-marlowest)
+
+plot(hvrank, color=orange)
+plot(atrrank, color=blue)
+plot(bbrank, color=green)
+plot(marrank, color=purple)
+//fill(u, l, color=blue)
