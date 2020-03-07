@@ -14,4 +14,4 @@ This is an indicator which ranks various volatility measures on a 1-100 scale fo
 This is a port of the Heikin Ashi Strategy v2 by breizh29 (https://www.tradingview.com/script/CfMjJmRT-Heikin-Ashi-Strategy-V2/) to Thinkscript.
 
 ## KAMA Slope
-This is a small update to the Kaufman Adaptive Moving Average on Think or Swim to show a plot of the slope of the link (rise over run). It also has an option to adjust for volatilty of the underlying so that you can more easily compare numbers between stocks/futures/currencies etc.  (For more info on the ATR adjustment, see MACD ATR.)
+This is a small update to the Kaufman Adaptive Moving Average on Think or Swim to show a plot of the slope of the line (rise over run). It also has an option to adjust for volatilty of the underlying so that you can more easily compare numbers between stocks/futures/currencies etc.  (For more info on the ATR adjustment, see MACD ATR.)
