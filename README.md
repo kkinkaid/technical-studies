@@ -11,4 +11,7 @@ This is a simple indicator based on Heikin Ashi charting.  It measures the heigh
 This is an indicator which ranks various volatility measures on a 1-100 scale for the past year.  It includes historical volatility, average true range, bollinger band width, and the width of a moving average ribbon.  It can be used to judge the volatility of an instrument and, if combined with implied volatility, it could be used to determine when options are over or under priced.
 
 ## Heikin Ashi Strategy
-This is a port of the Heikin Ashi Strategy v2 by breizh29 (https://www.tradingview.com/script/CfMjJmRT-Heikin-Ashi-Strategy-V2/) to Thinkscript. 
+This is a port of the Heikin Ashi Strategy v2 by breizh29 (https://www.tradingview.com/script/CfMjJmRT-Heikin-Ashi-Strategy-V2/) to Thinkscript.
+
+## KAMA Slope
+This is a small update to the Kaufman Adaptive Moving Average on Think or Swim to show a plot of the slope of the link (rise over run). It also has an option to adjust for volatilty of the underlying so that you can more easily compare numbers between stocks/futures/currencies etc.  (For more info on the ATR adjustment, see MACD ATR.)
